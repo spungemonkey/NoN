@@ -15,7 +15,8 @@ public class GUI_Kids : MonoBehaviour {
 	void Start () {
 
 
-	
+		kid1 = GameObject.Find ("Kid1");
+		kid1.SetActive(false);	
 		kid2 = GameObject.Find ("Kid2");
 		kid2.SetActive(false);
 		kid3 = GameObject.Find ("Kid3");
