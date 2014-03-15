@@ -12,7 +12,7 @@ public class elephant_Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<NavMeshAgent> ().destination = ele_Mother.transform.position;
+//		GetComponent<NavMeshAgent> ().destination = ele_Mother.transform.position;
 		
 	}
 }

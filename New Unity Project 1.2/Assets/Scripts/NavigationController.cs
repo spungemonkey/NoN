@@ -7,9 +7,10 @@ public class NavigationController : MonoBehaviour {
 	public GameObject[] Waypoints;
 	public NavMeshAgent navMesh;
 	int currentWaypoint=0;
-	public int wait;
+	public float wait;
 	public string WaypointTagName="Waypoint";
 	int timer = 10;
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,68 +20,36 @@ public class NavigationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		if (currentWaypoint>=Waypoints.Length)
-		{ 
-			currentWaypoint=Waypoints.Length;
-		} else{
-			navMesh.destination=Waypoints[currentWaypoint].transform.position;
-		}
-		int t = wpTime;
-		t--;
-		Collider[] colliders=Physics.OverlapSphere(transform.position,2.0f);
-		foreach(Collider c in colliders)
-		{
-			if (c.gameObject.tag==WaypointTagName)
-			{
-				
-
-				Debug.Log(t);
-				if (t <= 0)
-				{
-				Destroy(c.gameObject);
-					currentWaypoint++;
-					timer=10;
-				}
-				if (currentWaypoint>=Waypoints.Length)
-				{
-					currentWaypoint=Waypoints.Length;
-				} else{
-					navMesh.destination=Waypoints[currentWaypoint].transform.position;
-				}
-			}
-		}
-	
+		StartCoroutine(moveWaypoints ());
 	}
 	
-	void moveWaypoints(int wpTime){
+	public IEnumerator moveWaypoints(){
 		if (currentWaypoint>=Waypoints.Length)
 		{ 
 			currentWaypoint=Waypoints.Length;
 		} else{
 			navMesh.destination=Waypoints[currentWaypoint].transform.position;
 		}
-		int t = wpTime;
-		t--;
+
+
 		Collider[] colliders=Physics.OverlapSphere(transform.position,2.0f);
 		foreach(Collider c in colliders)
 		{
 			if (c.gameObject.tag==WaypointTagName)
 			{
-				
-
-				Debug.Log(t);
-				if (t <= 0)
+				if (c.gameObject !=null)
 				{
-				Destroy(c.gameObject);
+					Destroy(c.gameObject);
+					yield return new WaitForSeconds(wait);
+					
 					currentWaypoint++;
-					timer=10;
-				}
-				if (currentWaypoint>=Waypoints.Length)
-				{
-					currentWaypoint=Waypoints.Length;
-				} else{
-					navMesh.destination=Waypoints[currentWaypoint].transform.position;
+
+					if (currentWaypoint>=Waypoints.Length)
+					{
+						currentWaypoint=Waypoints.Length;
+					} else{
+						navMesh.destination=Waypoints[currentWaypoint].transform.position;
+					}
 				}
 			}
 		}
