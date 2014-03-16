@@ -1,15 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\GUI_Tok.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NavigationController.cs">
     <Files>
-      <File FileName="New Unity Project 1.2.sln" Line="1" Column="1" />
-      <File FileName="Assets\GUI\GUI_Tok.cs" Line="36" Column="2" />
-      <File FileName="Assets\Scripts\NavigationController.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\GUI_Button_Elephant.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\GUI_Kids.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\GUI_Sun.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\GUI_Cheetah.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\GUI_Button_Tok.cs" Line="11" Column="2" />
+      <File FileName="Assets\Scripts\NavigationController.cs" Line="12" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
