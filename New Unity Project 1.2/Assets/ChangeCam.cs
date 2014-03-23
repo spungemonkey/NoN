@@ -7,7 +7,7 @@ public class ChangeCam : MonoBehaviour {
 	public Camera nextCamera;
 	GameObject camTrigger;
 	public string nextLevel = "";
-
+	//this is a comment
 
 	// Use this for initialization
 	void Start () {

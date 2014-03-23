@@ -7,7 +7,7 @@ public class Attack : MonoBehaviour {
 	public string WayPointTagName = "Enemy";
 	public GameObject conWP;
 	public NavMeshAgent navMesh;
-
+	//comms
 	// Use this for initialization
 	void Start () {
 		navMesh = GetComponent<NavMeshAgent>();
