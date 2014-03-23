@@ -40,7 +40,6 @@ public class Temp_Narrator : MonoBehaviour {
 
 	void OnGUI(){
 		if (GUI.Button (new Rect (15, 15, butImg.width, butImg.height), butImg) && !audio.isPlaying) {
-						Debug.Log ("Hello");
 			audio.clip = ac[aClip];
 			audio.Play();
 				}

@@ -7,7 +7,9 @@ public class GUI_Button : MonoBehaviour {
 	public GameObject trigger;
 	public GameObject nextTrigger;
 	public Texture2D butImg;
+	public Texture2D butImg2;
 	public AudioClip ac;
+	public AudioClip ac2;
 	public int butPos;
 
 	bool guiEnabled = true;
@@ -29,17 +31,28 @@ public class GUI_Button : MonoBehaviour {
 
 	void OnGUI(){
 
-		GUI.enabled = guiEnabled;
+		if (!trigger.activeInHierarchy) {
+						if (GUI.Button (new Rect (butPos, Screen.height - 75, butImg.width, butImg.height), butImg) && !trigger.activeInHierarchy) {
 
-		if (GUI.Button (new Rect (butPos, Screen.height - 75, butImg.width, butImg.height), butImg) && !trigger.activeInHierarchy){
-			for (int i=0; i < obj.Length; i++) 
-			{
-				obj[i].SetActive(true);
-			}
-			audio.clip = ac;
-			audio.Play ();
-			guiEnabled = false;
-			nextTrigger.SetActive(false);
-		}
+								for (int i=0; i < obj.Length; i++) {
+										obj [i].SetActive (true);
+								}
+								audio.clip = ac;
+								audio.Play ();
+								//guiEnabled = false;
+								nextTrigger.SetActive (false);
+								butImg = null;
+								butImg2 = null;
+
+						}
+
+						if (GUI.Button (new Rect (butPos + 65, Screen.height - 75, butImg2.width, butImg2.height), butImg2)) {
+								audio.clip = ac2;
+								audio.Play ();
+						}
+
+				}
+
+
 	}
 }
