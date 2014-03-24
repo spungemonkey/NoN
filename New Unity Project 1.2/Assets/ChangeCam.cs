@@ -3,35 +3,22 @@ using System.Collections;
 
 public class ChangeCam : MonoBehaviour {
 
-	public Camera currentCamera;
-	public Camera nextCamera;
-	GameObject camTrigger;
-	public string nextLevel = "";
-	//this is a comment
+	public GameObject trigger;
+	public Camera currentCam;
+	public Camera nextCam;
+
+
 
 	// Use this for initialization
 	void Start () {
-		currentCamera.enabled = true;
-		nextCamera.enabled = false;
-
-		camTrigger = GameObject.Find ("aud_Cheetah");
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (!camTrigger.activeInHierarchy) {
-
-
-			//if (currentCamera == nextCamera)
-			//{
-			//	Application.LoadLevel(nextLevel);
-			//} else {
-			currentCamera.enabled = false;
-			nextCamera.enabled = true;
-			//}
-			Debug.Log("Hello Worjguk6kbild");
+	if (!trigger.activeInHierarchy && currentCam.camera.enabled){
+			currentCam.camera.enabled = false;
+			nextCam.camera.enabled = true;
 		}
 	}
 }

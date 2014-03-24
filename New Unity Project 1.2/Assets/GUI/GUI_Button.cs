@@ -32,7 +32,7 @@ public class GUI_Button : MonoBehaviour {
 	void OnGUI(){
 
 		if (!trigger.activeInHierarchy) {
-						if (GUI.Button (new Rect (butPos, Screen.height - 75, butImg.width, butImg.height), butImg) && !trigger.activeInHierarchy) {
+						if (GUI.Button (new Rect (butPos, Screen.height / 2, butImg.width, butImg.height), butImg) && !trigger.activeInHierarchy) {
 
 								for (int i=0; i < obj.Length; i++) {
 										obj [i].SetActive (true);
@@ -46,7 +46,7 @@ public class GUI_Button : MonoBehaviour {
 
 						}
 
-						if (GUI.Button (new Rect (butPos + 65, Screen.height - 75, butImg2.width, butImg2.height), butImg2)) {
+						if (GUI.Button (new Rect (butPos + 65, Screen.height / 2, butImg2.width, butImg2.height), butImg2)) {
 								audio.clip = ac2;
 								audio.Play ();
 						}
