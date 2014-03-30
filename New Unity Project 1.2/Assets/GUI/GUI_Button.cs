@@ -10,6 +10,7 @@ public class GUI_Button : MonoBehaviour {
 	public Texture2D butImg2;
 	public AudioClip[] ac;
 	public AudioClip ac2;
+	public float accelerator = 1.0f;
 	int j = 0;
 	bool playAudio;
 
@@ -55,7 +56,7 @@ public class GUI_Button : MonoBehaviour {
 			if (j >= ac.Length){
 				audioTime+=Time.deltaTime;
 
-				if (audioTime>audio.clip.length-1.0f)
+				if (audioTime>audio.clip.length-accelerator)
 				{
 					nextTrigger.SetActive(false);
 					j = 0;
@@ -72,7 +73,6 @@ public class GUI_Button : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1") && 
 		    !buttonPressed)
 		{
-			Debug.Log ("Hwejerijfowijroifjweroifweoiwoeifjrefiojreoij");
 			buttonPressed = true;
 			ButtonTrigger();
 		}

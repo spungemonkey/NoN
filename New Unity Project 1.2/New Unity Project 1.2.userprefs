@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\GUI_Button.cs">
     <Files>
-      <File FileName="Assets\Scripts\WPRemoval.cs" Line="25" Column="36" />
-      <File FileName="Assets\GUI\testswitch.cs" Line="27" Column="30" />
-      <File FileName="Assets\GUI\GUI_Button.cs" Line="58" Column="41" />
-      <File FileName="Assets\Scripts\NavigationController.cs" Line="26" Column="20" />
-      <File FileName="Assets\Scripts\ChangeCam.cs" Line="22" Column="109" />
+      <File FileName="Assets\GUI\GUI_Button.cs" Line="128" Column="1" />
+      <File FileName="Assets\Scripts\WPRemoval.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\testswitch.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\GUI_Button.cs" Line="59" Column="48" />
+      <File FileName="Assets\Scripts\NavigationController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ChangeCam.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ChangeScene.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
