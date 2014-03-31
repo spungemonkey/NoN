@@ -1,14 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\GUI_Button.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NavigationController.cs">
     <Files>
-      <File FileName="Assets\GUI\GUI_Button.cs" Line="128" Column="1" />
-      <File FileName="Assets\Scripts\WPRemoval.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\testswitch.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\GUI_Button.cs" Line="59" Column="48" />
       <File FileName="Assets\Scripts\NavigationController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ChangeCam.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ChangeScene.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\GUI_Button.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\Narration.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NavigationController.cs" Line="15" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

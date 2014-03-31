@@ -11,16 +11,13 @@ public class GUI_Button : MonoBehaviour {
 	public AudioClip[] ac;
 	public AudioClip ac2;
 	public float accelerator = 1.0f;
+
 	int j = 0;
 	bool playAudio;
 
 	int butPos;
 
-	Input mainSwitch;
-	Input secondarySwitch;
-	Input lastSwitch;
-
-	bool guiEnabled = true;
+	bool audComp = false;
 
 	bool buttonPressed = false;
 	public float updateTime = 1.0f;
@@ -32,6 +29,7 @@ public class GUI_Button : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		
 
 		for (int i=0; i < obj.Length; i++) 
 		{
@@ -51,6 +49,11 @@ public class GUI_Button : MonoBehaviour {
 				audio.clip = ac [j];
 				audio.Play ();
 				//j = j + 1;
+				//audio.clip = null;
+				if (j > 0)
+				{
+					ac[j-1] = null;
+				}
 				++j;
 			}
 			if (j >= ac.Length){
@@ -62,16 +65,24 @@ public class GUI_Button : MonoBehaviour {
 					j = 0;
 					playAudio = false;
 					audio.clip = null;
+					audComp = true;
 				}
 			}
 
-			print (audioTime);
-			print (audio.clip.length);
+			if (audComp)
+			{
+				for (int i = 0; i < ac.Length; i++)
+				{
+					//ac[i] = null;
+				}
+			}
 		}
 
 
 		if (Input.GetButtonDown("Fire1") && 
-		    !buttonPressed)
+		    !buttonPressed &&
+		    !trigger.activeInHierarchy &&
+		    !audio.isPlaying)
 		{
 			buttonPressed = true;
 			ButtonTrigger();
@@ -94,12 +105,15 @@ public class GUI_Button : MonoBehaviour {
 
 		if (!trigger.activeInHierarchy) {
 						if (GUI.Button (new Rect (butPos, Screen.height / 2 + 30, butImg.width, butImg.height), butImg) && 
-						!trigger.activeInHierarchy) {
+						!trigger.activeInHierarchy &&
+			    		!audio.isPlaying) {
 							ButtonTrigger();
 						}
 
-						if (GUI.Button (new Rect (butPos + 65, Screen.height / 2 + 30, butImg2.width, butImg2.height), butImg2) ||
-						Input.GetKey(KeyCode.JoystickButton1)) {
+						if (GUI.Button (new Rect (butPos + 65, Screen.height / 2 + 30, butImg2.width, butImg2.height), butImg2) &&
+			    		!audio.isPlaying ||
+						Input.GetKey(KeyCode.JoystickButton1) &&
+			    		!audio.isPlaying) {
 							WrongButton();
 						}
 
@@ -112,11 +126,9 @@ public class GUI_Button : MonoBehaviour {
 			obj [i].SetActive (true);
 		}
 		playAudio = true;
-	//	nextTrigger.SetActive (false);
 		butImg = null;
 		butImg2 = null;
 		buttonPressed=true;
-
 	}
 
 	void WrongButton(){

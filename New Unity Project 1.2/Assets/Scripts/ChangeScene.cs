@@ -16,7 +16,6 @@ public class ChangeScene : MonoBehaviour {
 		//if (!trigger.activeInHierarchy) {
 		if (trigger == null || !trigger.activeInHierarchy){
 			Application.LoadLevel(nextLevel);
-			Debug.Log("This is the level");
 				}
 	}
 }

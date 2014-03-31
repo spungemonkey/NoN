@@ -4,15 +4,17 @@ using System.Collections;
 public class elephant_Movement : MonoBehaviour {
 
 	// Use this for initialization
-	GameObject ele_Mother;
+	public GameObject ele;
+	public NavMeshAgent navMesh;
 	// Use this for initialization
 	void Start () {
-		ele_Mother = GameObject.Find ("Elephant_Mother");
+		navMesh=GetComponent<NavMeshAgent>();
+		navMesh.destination=ele.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-//		GetComponent<NavMeshAgent> ().destination = ele_Mother.transform.position;
+		navMesh.destination=ele.transform.position;
 		
 	}
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class NavigationController : MonoBehaviour {
@@ -9,7 +9,6 @@ public class NavigationController : MonoBehaviour {
 	int currentWaypoint=0;
 	public float wait;
 	public string WaypointTagName="Waypoint";
-	int timer = 10;
 
 
 	// Use this for initialization
