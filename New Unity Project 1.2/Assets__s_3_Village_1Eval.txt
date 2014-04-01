@@ -1,0 +1,4 @@
+3_Village
+Aspect Ratio: 1010x568
+Button 1 Position: 441, 598 Button 2 Position: 506, 598
+Correct

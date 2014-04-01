@@ -32,8 +32,6 @@ public class Narration : MonoBehaviour {
 
 			if (j >= ac.Length){
 				audioTime+=Time.deltaTime;
-				print (audio.clip.length);
-				print (audioTime);
 				if (audioTime>audio.clip.length-accelerator)
 				{
 					j = 0;
